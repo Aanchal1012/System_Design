@@ -1,0 +1,61 @@
+# 🚗 Ride Sharing App - SOLID Principles LLD
+
+This is a small-scale Low-Level Design (LLD) of a ride-sharing system built in Java to demonstrate the application of SOLID Principles.
+The focus is on writing clean, extensible, and maintainable object-oriented code — not on building a full production-ready system.
+
+---
+
+## Features Implemented
+
+- User Management: Rider & Driver entities
+- Ride Request: Request creation & assignment
+- Matching Logic: Basic driver matching
+- Payment Processing: UPI/Card-based with interchangeable strategies
+
+---
+
+## SOLID Principles in Action
+
+S - Single Responsibility Principle
+Each class handles one job:
+- `User`, `Rider`, `Driver` ➝ Manage user identity
+- `RideRequest` ➝ Contains ride details
+- `RideMatchingService` ➝ Finds available drivers
+- `PaymentService` ➝ Handles payments via strategies
+
+---
+
+O - Open/Closed Principle
+Code is open for extension, closed for modification:
+- Add new payment methods by implementing `IPaymentProcessor`
+- Add new matching logic by implementing `IRideMatcher`
+
+No existing code needs to be changed!
+
+---
+
+L - Liskov Substitution Principle
+- `Rider` and `Driver` can be used wherever a `User` or `IUser` is expected
+- `UPIPaymentProcessor` and `CardPaymentProcessor` can replace `IPaymentProcessor`
+
+Subtypes behave correctly when used in place of their parent types.
+
+---
+
+I - Interface Segregation Principle
+Clients only depend on what they use:
+- `IUser` only has identity methods (`getId()`, `getName()`)
+- `IPaymentProcessor` defines only `processPayment()`
+
+Interfaces are focused and minimal.
+
+---
+
+D - Dependency Inversion Principle
+High-level modules depend on **abstractions**, not implementations:
+- `PaymentService` depends on `IPaymentProcessor`
+- `RideMatchingService` depends on `IRideMatcher`
+
+This allows for easy swapping and testing of logic.
+
+---
