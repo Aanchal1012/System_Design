@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SOLID/SOLID.iml" filepath="$PROJECT_DIR$/SOLID/SOLID.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Singleton_Factory_Pattern/Singleton_Factory_Pattern.iml" filepath="$PROJECT_DIR$/Singleton_Factory_Pattern/Singleton_Factory_Pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/SystemDesign.iml" filepath="$PROJECT_DIR$/SystemDesign.iml" />
     </modules>
   </component>
